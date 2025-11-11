@@ -8,7 +8,7 @@
     <link rel="icon" href="./favicon/favicon.svg" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="init()">
     <header role="banner">
         <section>
             <img src="./favicon/favicon.png" alt="Logo Fotogram">
@@ -25,12 +25,37 @@
             <h2>Welkommen beim Alex's Weltraum Fotogram</h2>
             <section class="image">
                 <div id="import-image" class="images">
+                    
 
-                    <dialog>
-                        
-                    </dialog>
+                    
                 </div>
+            <dialog id="myDialog">
+                <header>
+                    <h2 id="dialogTittel">
+                        Fotogram
+                    </h2>
+                    <button onclick="dialogClose()" aria-label="Dialog Schließen">Schließen</button>
+                </header>
 
+                <section>
+                    <div id="dialogImportImage" class="dialogImages">
+                        <img src="./img/ai-generated-7790616_1280.jpg" alt="Logo Fotogram">
+                    </div>
+                    
+                </section>
+                <nav>
+                    <button>links</button>
+                    <button>mitte</button>
+                    <button>rechts</button>
+                </nav>
+                <!-- Button zum Schließen des Dialogs -->
+                    
+
+                <!-- <footer>
+                    
+                </footer> -->
+                
+            </dialog>
 
             </section>
         </section>
@@ -47,4 +72,5 @@
 
     
 </body>
+<script src="./script.js"></script>
 </html>

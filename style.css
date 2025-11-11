@@ -90,6 +90,32 @@ main section {
     padding: 0 120px;
 
 }
+
+main img {
+    height: 128px;
+    width: 128px;
+    border-radius: 8px;
+
+}
+.images {
+    /* height: 128px;
+    width: 128px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 8px;
+    flex-wrap: wrap;
+
+}
+
+.images img:hover {
+    transform: scale(1.2); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
 footer {
     width: 100%;
     height: 200px;
@@ -110,6 +136,82 @@ footer section {
     align-items: center;
     flex-direction: column;
 
+}
+dialog section {
+    background-color: rgb(111, 71, 49);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+
+}
+dialog header {
+    background-color: rgb(111, 71, 49);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+dialog nav {
+    padding: 16px 16px;
+    background-color: rgb(111, 71, 49);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+
+}
+
+dialog img {
+    height: 300px;
+    width: 300px;
+    border-radius: 8px;
+
+}
+
+/* Standardzustand des Dialogs */
+dialog {
+    /* border: 5px solid rgb(237, 137, 66);             roter Rahmen um den Dialog */
+    /* transition: all 2s ease-in;        animierte Übergänge über 2 Sekunden */
+    width: 50vw;
+    height: 60vh;
+    background-color: rgb(111, 71, 49);
+    box-sizing: border-box;
+}
+
+/* Zustand, wenn der Dialog geöffnet ist */
+dialog.opened {
+    border: 5px solid rgba(13, 87, 31, 0.278);             /* gleicher roter Rahmen */
+    border-radius: 5%;
+    transform: translateX(0);          /* verschiebt Dialog zurück in die Mitte */
+    /* transition: all 1s ease-in;        sanfte Animation */
+}
+
+/* Der Hintergrund (Backdrop), wenn Dialog angezeigt wird */
+dialog::backdrop {
+    opacity: 0;                        /* unsichtbar im Ausgangszustand */
+   background-color: rgba(0, 0, 0, 0.5); /* Eine semi-transparente dunklere Hintergrundfarbe, um den Blur-Effekt zu verstärken */
+    transition: all 1s ease-in;        /* weicher Übergang */
+}
+
+/* Sichtbarer Hintergrund, wenn der Dialog geöffnet ist */
+dialog.opened::backdrop {
+    opacity: 1;                        /* wird sichtbar */
+    /* Eine semi-transparente dunklere Hintergrundfarbe, um den Blur-Effekt zu verstärken */
+    /* background-color: rgba(0, 0, 0, 0.3);  */
+    transition: all 1s ease-in;        /* Übergangsdauer: X Sekunden */
+}
+
+button {
+    height: 32px ;
+    width: auto;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 8px 8px;
+    background-color: brown;
+    
 }
 
 
