@@ -80,7 +80,7 @@ main {
 main p {
     font-size: 16px;
 }
-main section {
+/* main section {
     width: 100%;
     max-width: 1440px;    
     display: flex;
@@ -89,7 +89,7 @@ main section {
     flex-direction: column;
     padding: 0 120px;
 
-}
+} */
 
 main img {
     height: 128px;
@@ -98,8 +98,7 @@ main img {
 
 }
 .images {
-    /* height: 128px;
-    width: 128px; */
+   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,6 +106,22 @@ main img {
     height: auto;
     gap: 8px;
     flex-wrap: wrap;
+    /* padding: 0 120px; */
+    /* box-sizing: border-box; */
+
+}
+.imageGallery {
+   
+    width: 100%;
+    max-width: 1440px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 120px;
+    box-sizing: border-box;
+    
+    
 
 }
 
@@ -135,6 +150,7 @@ footer section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    box-sizing: border-box;
 
 }
 dialog section {
@@ -149,9 +165,11 @@ dialog section {
 dialog header {
     background-color: rgb(111, 71, 49);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+    height: auto;
+    margin: 0;
+    
 
 }
 dialog nav {
@@ -176,7 +194,7 @@ dialog {
     /* border: 5px solid rgb(237, 137, 66);             roter Rahmen um den Dialog */
     /* transition: all 2s ease-in;        animierte Übergänge über 2 Sekunden */
     width: 50vw;
-    height: 60vh;
+    height: 75vh;
     background-color: rgb(111, 71, 49);
     box-sizing: border-box;
 }
