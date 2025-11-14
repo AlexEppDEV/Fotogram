@@ -23,6 +23,7 @@ header {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+
 }
 header section {
     width: 100%;
@@ -51,12 +52,16 @@ h1 {
     color: white;
     font-family: "Raleway", sans-serif;
     font-weight: 400; /* normal */
+    margin: 0;
+    padding: 32px 0;
 }
 h2 {
     font-size: 36px;
     color: white;
     font-family: "Raleway", sans-serif;
     font-weight: 400; /* normal */
+    margin: 0;
+    padding: 32px 0;
 }
 
 h3 {
@@ -64,6 +69,8 @@ h3 {
     font-family: "Raleway", sans-serif;
     font-weight: 400; /* normal */
     color: white;
+    margin: 0;
+    padding: 32px 0;
 }
 main {
     width: 100%;
@@ -153,12 +160,17 @@ footer section {
     box-sizing: border-box;
 
 }
+
+
+                                            /* DIALOG  */
+
 dialog section {
     background-color: rgb(111, 71, 49);
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* height: 100%; */
     /* flex-direction: column; */
 
 }
@@ -183,9 +195,18 @@ dialog nav {
 }
 
 dialog img {
-    height: 300px;
-    width: 300px;
+    height: 75%;
+    width: 50%;
     border-radius: 8px;
+    padding: 16px 16px;
+    
+
+}
+.dialogImages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
 
 }
 
@@ -230,7 +251,22 @@ button {
     padding: 8px 8px;
     background-color: brown;
     
+    
 }
+
+button:hover {
+    
+    transform: scale(1); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* button:hover {
+    
+    transform: scale(1); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+} */
 
 
 /* Fonts typ */

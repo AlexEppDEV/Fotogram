@@ -18,13 +18,25 @@ function init() {
     let NewImages = document.getElementById('import-image');
     NewImages.innerHTML = ' ';
     
-// problem das erste bold wird nicht angezeigt
+
     for (let index = 0; index < images.length; index++) {
-       NewImages.innerHTML += `<img src="./img/${images[index]}" onclick="dialogOpen()" alt="Fotogram">`;
+       NewImages.innerHTML += `<img src="./img/${images[index]}" onclick="dialogOpen(); dialogImgImport(this);" alt="Images">`;
     }
     
 
 }
+
+
+
+function dialogImgImport(clickedImage) {
+    const srcValue = clickedImage.getAttribute("src");
+    console.log(srcValue);
+
+    const dialogImg = document.getElementById("dialogImportImage");
+    dialogImg.src = srcValue;
+}
+
+
 
 
 
@@ -40,7 +52,6 @@ function init() {
 
     // Funktion zum Schließen des Dialogs
     function dialogClose() {
-        // const dialogRef = document.getElementById('myDialog');
         dialogRef.close();                // Schließt den Dialog
         dialogRef.classList.remove('opened'); // Entfernt die CSS-Klasse → Animation zurücksetzen
     }
