@@ -13,7 +13,6 @@ body {
     flex-direction: column;
     margin: 0;
    
-    /* width: 100%; */
 }
 header {
     width: 100%;
@@ -42,7 +41,6 @@ header p {
     color: white;
 }
 header img {
-    /* padding-left: 32px; */
     height: 128px;
     width: 128px;
 }
@@ -87,16 +85,7 @@ main {
 main p {
     font-size: 16px;
 }
-/* main section {
-    width: 100%;
-    max-width: 1440px;    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0 120px;
 
-} */
 
 main img {
     height: 128px;
@@ -113,8 +102,6 @@ main img {
     height: auto;
     gap: 8px;
     flex-wrap: wrap;
-    /* padding: 0 120px; */
-    /* box-sizing: border-box; */
 
 }
 .imageGallery {
@@ -127,9 +114,6 @@ main img {
     flex-direction: column;
     padding: 0 120px;
     box-sizing: border-box;
-    
-    
-
 }
 
 .images img:hover {
@@ -164,16 +148,8 @@ footer section {
 
                                             /* DIALOG  */
 
-dialog section {
-    background-color: rgb(111, 71, 49);
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* height: 100%; */
-    /* flex-direction: column; */
 
-}
+
 dialog header {
     background-color: rgb(111, 71, 49);
     display: flex;
@@ -181,32 +157,40 @@ dialog header {
     align-items: center;
     height: auto;
     margin: 0;
+    max-height: 15%;
     
 
 }
+
+dialog section {
+    background-color: rgb(111, 71, 49);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 100%;
+
+}
+
 dialog nav {
     padding: 16px 16px;
     background-color: rgb(111, 71, 49);
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
-
+    max-height: 15%;
 }
+
 
 dialog img {
-    height: 75%;
-    width: 50%;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
     border-radius: 8px;
-    padding: 16px 16px;
+    object-fit: contain;
     
-
-}
-.dialogImages {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70%;
 
 }
 
@@ -261,12 +245,6 @@ button:hover {
     cursor: pointer;
 }
 
-/* button:hover {
-    
-    transform: scale(1); 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-} */
 
 
 /* Fonts typ */
