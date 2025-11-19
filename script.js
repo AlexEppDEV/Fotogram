@@ -26,16 +26,95 @@ function init() {
 
 }
 
+let indexNumber = null;
+let nextIndex = null;
+let imageFile = './img/';
 
-
+// function - value lesen bei anclicken und übertragen in dialog zu scr 
 function dialogImgImport(clickedImage) {
-    const srcValue = clickedImage.getAttribute("src");
-    console.log(srcValue);
 
-    const dialogImg = document.getElementById("dialogImportImage");
+    // Holt den kompletten src-Wert des angeklickten Bildes (z. B. "./img/pic01.jpg")
+    let srcValue = clickedImage.getAttribute("src");
+    console.log(srcValue); // Nur zur Kontrolle in der Konsole
+
+    // Extrahiert den Dateinamen aus dem Pfad, indem am "/" getrennt und nur das letzte Element genutzt wird
+    let imageName = srcValue.split('/').pop();
+
+    // Sucht im globalen Array "images" an welcher Position sich dieses Bild befindet
+    indexNumber = images.indexOf(imageName);
+
+    // Aktualisiert die Bildnummer im Dialog, z. B. "3 / 10"
+    document.getElementById("imageNumber").innerText = `${indexNumber + 1} / ${images.length} `;
+
+    // Findet das Bild im Dialogfenster und setzt dessen "src" auf das angeklickte Bild
+    let dialogImg = document.getElementById("dialogImportImage");
     dialogImg.src = srcValue;
 }
 
+function imageBefore () {
+    if ( indexNumber >= images.length - 1) {
+        indexNumber = -1;
+            // return;
+
+        }
+    
+
+    indexNumber = indexNumber + 1;
+    // Sucht im globalen Array "images" an welcher Position sich dieses Bild befindet
+    let nextImage = images[indexNumber];
+    console.log(nextImage)
+
+    let nextDialogImg = document.getElementById("dialogImportImage");
+    nextDialogImg.src = imageFile + nextImage;
+
+    // // Aktualisiert die Bildnummer im Dialog, z. B. "3 / 10"
+    document.getElementById("imageNumber").innerText = `${indexNumber + 1} / ${images.length} `;
+    
+}
+
+
+function imageBack () {
+
+
+    indexNumber = indexNumber - 1; 
+    // Sucht im globalen Array "images" an welcher Position sich dieses Bild befindet
+    let nextImage = images[indexNumber];
+    console.log(nextImage)
+
+    let nextDialogImg = document.getElementById("dialogImportImage");
+    nextDialogImg.src = imageFile + nextImage;
+
+    // // Aktualisiert die Bildnummer im Dialog, z. B. "3 / 10"
+    document.getElementById("imageNumber").innerText = `${indexNumber + 1} / ${images.length} `;
+}
+
+// zum testen 
+function imageBackFor () {
+
+    if ( indexNumber <= 0) {
+        indexNumber = images.length;
+            // return;
+
+        }
+
+        indexNumber = indexNumber - 1; 
+
+        
+        // Sucht im globalen Array "images" an welcher Position sich dieses Bild befindet
+        let nextImage = images[indexNumber];
+        console.log(nextImage)
+
+        let nextDialogImg = document.getElementById("dialogImportImage");
+        nextDialogImg.src = imageFile + nextImage;
+
+        // // Aktualisiert die Bildnummer im Dialog, z. B. "3 / 10"
+        document.getElementById("imageNumber").innerText = `${indexNumber + 1} / ${images.length} `;
+        
+    
+
+
+    
+}
 
 
 
