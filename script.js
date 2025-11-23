@@ -13,22 +13,19 @@ const images = [
 "star-trek-8658148_1280.jpg"
 ];
 
+let indexNumber = null;
+let nextIndex = null;
+let imageFile = './img/';
+
 
 function init() {
     let NewImages = document.getElementById('import-image');
     NewImages.innerHTML = ' ';
-    
-
     for (let index = 0; index < images.length; index++) {
        NewImages.innerHTML += `<img src="./img/${images[index]}" onclick="dialogOpen(); dialogImgImport(this);" alt="Images">`;
     }
-    
-
 }
 
-let indexNumber = null;
-let nextIndex = null;
-let imageFile = './img/';
 
 // function - value lesen bei anclicken und übertragen in dialog zu scr 
 function dialogImgImport(clickedImage) {
@@ -54,52 +51,28 @@ function dialogImgImport(clickedImage) {
 function imageBefore () {
     if ( indexNumber >= images.length - 1) {
         indexNumber = -1;
-            // return;
-
         }
     
-
     indexNumber = indexNumber + 1;
     // Sucht im globalen Array "images" an welcher Position sich dieses Bild befindet
     let nextImage = images[indexNumber];
-    console.log(nextImage)
+    // console.log(nextImage)
 
     let nextDialogImg = document.getElementById("dialogImportImage");
     nextDialogImg.src = imageFile + nextImage;
 
     // // Aktualisiert die Bildnummer im Dialog, z. B. "3 / 10"
-    document.getElementById("imageNumber").innerText = `${indexNumber + 1} / ${images.length} `;
-    
+    document.getElementById("imageNumber").innerText = `${indexNumber + 1} / ${images.length} `; 
 }
 
 
 function imageBack () {
 
-
-    indexNumber = indexNumber - 1; 
-    // Sucht im globalen Array "images" an welcher Position sich dieses Bild befindet
-    let nextImage = images[indexNumber];
-    console.log(nextImage)
-
-    let nextDialogImg = document.getElementById("dialogImportImage");
-    nextDialogImg.src = imageFile + nextImage;
-
-    // // Aktualisiert die Bildnummer im Dialog, z. B. "3 / 10"
-    document.getElementById("imageNumber").innerText = `${indexNumber + 1} / ${images.length} `;
-}
-
-// zum testen 
-function imageBackFor () {
-
     if ( indexNumber <= 0) {
         indexNumber = images.length;
-            // return;
-
         }
 
         indexNumber = indexNumber - 1; 
-
-        
         // Sucht im globalen Array "images" an welcher Position sich dieses Bild befindet
         let nextImage = images[indexNumber];
         console.log(nextImage)
@@ -108,20 +81,13 @@ function imageBackFor () {
         nextDialogImg.src = imageFile + nextImage;
 
         // // Aktualisiert die Bildnummer im Dialog, z. B. "3 / 10"
-        document.getElementById("imageNumber").innerText = `${indexNumber + 1} / ${images.length} `;
-        
-    
-
-
-    
+        document.getElementById("imageNumber").innerText = `${indexNumber + 1} / ${images.length} `;   
 }
-
-
 
 
     // Zugriff auf das Dialogelement mit seiner ID
     
-    const dialogRef = document.getElementById('myDialog');
+    let dialogRef = document.getElementById('imgDialog');
     // Funktion zum Öffnen des Dialogs
     function dialogOpen() {
         
@@ -135,3 +101,19 @@ function imageBackFor () {
         dialogRef.classList.remove('opened'); // Entfernt die CSS-Klasse → Animation zurücksetzen
     }
 
+
+
+let dialog = document.getElementById("imgDialog");
+let hero = dialog.querySelector(".heroDialog");
+
+// 1. Klick AUF den Inhalt
+hero.addEventListener("click", function(event) {
+    // verhindert, dass der Klick zum <dialog> hochwandert
+    event.stopPropagation();
+});
+
+// 2. Klick AUF das Backdrop (also den Dialog selbst)
+dialog.addEventListener("click", function(event) {
+    console.log("Backdrop wurde geklickt → Dialog schließen");
+    dialog.close();
+});

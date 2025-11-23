@@ -22,8 +22,8 @@ header {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-
 }
+
 header section {
     width: 100%;
     max-width: 1440px;
@@ -31,8 +31,8 @@ header section {
     justify-content: left;
     align-items: center;
     padding: 0 120px;
-
 }
+
 header p {
     padding-left: 32px;
     font-family: "Raleway", sans-serif;
@@ -40,6 +40,7 @@ header p {
     font-size: 48px;
     color: white;
 }
+
 header img {
     height: 128px;
     width: 128px;
@@ -53,6 +54,7 @@ h1 {
     margin: 0;
     padding: 32px 0;
 }
+
 h2 {
     font-size: 36px;
     color: white;
@@ -70,6 +72,7 @@ h3 {
     margin: 0;
     padding: 32px 0;
 }
+
 main {
     width: 100%;
     height: 80vh;   
@@ -77,8 +80,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    
+    flex-direction: column;  
     box-sizing: border-box;
 }
 
@@ -91,10 +93,9 @@ main img {
     height: 128px;
     width: 128px;
     border-radius: 8px;
-
 }
-.images {
-   
+
+.images {  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,10 +103,9 @@ main img {
     height: auto;
     gap: 8px;
     flex-wrap: wrap;
-
 }
+
 .imageGallery {
-   
     width: 100%;
     max-width: 1440px;    
     display: flex;
@@ -130,7 +130,6 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
 
 footer section {
@@ -142,7 +141,6 @@ footer section {
     align-items: center;
     flex-direction: column;
     box-sizing: border-box;
-
 }
 
 
@@ -158,8 +156,6 @@ dialog header {
     height: auto;
     margin: 0;
     max-height: 15%;
-    
-
 }
 
 dialog section {
@@ -170,7 +166,6 @@ dialog section {
     align-items: center;
     height: 70%;
     width: 100%;
-
 }
 
 dialog nav {
@@ -190,14 +185,10 @@ dialog img {
     height: auto;
     border-radius: 8px;
     object-fit: contain;
-    
-
 }
 
 /* Standardzustand des Dialogs */
 dialog {
-    /* border: 5px solid rgb(237, 137, 66);             roter Rahmen um den Dialog */
-    /* transition: all 2s ease-in;        animierte Übergänge über 2 Sekunden */
     width: 50vw;
     height: 75vh;
     background-color: rgb(111, 71, 49);
@@ -206,25 +197,22 @@ dialog {
 
 /* Zustand, wenn der Dialog geöffnet ist */
 dialog.opened {
-    border: 5px solid rgba(13, 87, 31, 0.278);             /* gleicher roter Rahmen */
+    border: 5px solid rgba(13, 87, 31, 0.278);             
     border-radius: 5%;
-    transform: translateX(0);          /* verschiebt Dialog zurück in die Mitte */
-    /* transition: all 1s ease-in;        sanfte Animation */
+    transform: translateX(0);         
 }
 
 /* Der Hintergrund (Backdrop), wenn Dialog angezeigt wird */
 dialog::backdrop {
-    opacity: 0;                        /* unsichtbar im Ausgangszustand */
-   background-color: rgba(0, 0, 0, 0.5); /* Eine semi-transparente dunklere Hintergrundfarbe, um den Blur-Effekt zu verstärken */
-    transition: all 1s ease-in;        /* weicher Übergang */
+    opacity: 0;                       
+   background-color: rgba(0, 0, 0, 0.5); 
+    transition: all 1s ease-in;       
 }
 
 /* Sichtbarer Hintergrund, wenn der Dialog geöffnet ist */
 dialog.opened::backdrop {
-    opacity: 1;                        /* wird sichtbar */
-    /* Eine semi-transparente dunklere Hintergrundfarbe, um den Blur-Effekt zu verstärken */
-    /* background-color: rgba(0, 0, 0, 0.3);  */
-    transition: all 1s ease-in;        /* Übergangsdauer: X Sekunden */
+    opacity: 1;                       
+    transition: all 1s ease-in;        
 }
 
 button {
@@ -233,19 +221,154 @@ button {
     font-size: 16px;
     border-radius: 5px;
     padding: 8px 8px;
-    background-color: brown;
-    
-    
+    background-color: brown; 
 }
 
-button:hover {
-    
+button:hover {  
     transform: scale(1); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
 }
 
+@media (min-width: 768px) and (max-width: 1280px) {
+    header {
+    width: 100%;
+    height: 150px;
+    
+}
 
+header section {
+    width: 100%;
+    padding: 0 60px;
+}
+
+header p {
+    padding-left: 24px;
+    font-size: 32px;
+}
+
+header img {
+    height: 96px;
+    width: 96px;
+}
+
+h1 {
+    font-size: 40px;
+    padding: 24px 0;
+}
+
+h2 {
+    font-size: 34px;
+    padding: 32px 0;
+}
+
+h3 {
+    font-size: 28px;
+    padding: 32px 0;
+}
+
+main {
+    width: 100%;
+    height: 80vh;   
+}
+
+main p {
+    font-size: 16px;
+}
+
+
+main img {
+    height: 128px;
+    width: 128px;
+    border-radius: 8px;
+}
+
+.images {  
+    width: 100%;
+    height: auto;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.imageGallery {
+    width: 100%;  
+    padding: 0 60px;
+
+}
+
+.images img:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    width: 100%;
+    height: 150px;
+}
+
+footer section {
+    width: 100%;
+    padding: 0 60px;
+}
+
+dialog header {
+    margin: 0;
+    max-height: 15%;
+}
+
+dialog section {
+    height: 70%;
+    width: 100%;
+}
+
+dialog nav {
+    padding: 16px 16px;
+    max-height: 15%;
+}
+
+
+dialog img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+ 
+}
+
+/* Standardzustand des Dialogs */
+dialog {
+    width: 50vw;
+    height: 75vh;
+}
+
+/* Zustand, wenn der Dialog geöffnet ist */
+dialog.opened {
+    border: 5px solid rgba(13, 87, 31, 0.278);             
+    border-radius: 5%;
+      
+}
+
+
+button {
+    height: 32px ;
+    width: auto;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 8px 8px;
+
+}
+
+button:hover {  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+ 
+}
+
+
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+
+}
 
 /* Fonts typ */
 @font-face {

@@ -13,55 +13,43 @@
         <section>
             <img src="./favicon/favicon.png" alt="Logo Fotogram">
         <p>Fotogram</p>
-
-        </section>
-        
+        </section>       
     </header>
     
     <main>
         <section class="imageGallery">
             <h1>Fotogram</h1>
-            <h2>Welkommen beim Alex's Weltraum Fotogram</h2>
-            
+            <h2>Welkommen beim Alex's Weltraum Fotogram</h2>           
                 <div id="import-image" class="images">
 
                 </div>
                     
-            <dialog id="myDialog">
-                <header>
+            <dialog id="imgDialog">
+                <div class="heroDialog">
+                    <header>
                     <h2 id="dialogTittel">
                         Fotogram
                     </h2>
                     <button onclick="dialogClose()" aria-label="Dialog Schließen">X</button>
-                </header>
+                    </header>
 
-                <section class="dialogImages">
-                    <!-- <div class="dialogImages"> -->
-                        <img src="" id="dialogImportImage" alt="Logo Fotogram">
-                    <!-- </div> -->
-                    
-                </section>
-                <nav>
-                    <button onclick="imageBackFor()">Back</button>
-                    <p id="imageNumber"></p>                 
-                    <button onclick="imageBefore()">Next</button>
-                </nav>
+                    <section class="dialogImages">
+                            <img src="" id="dialogImportImage" alt="Logo Fotogram">  
+                    </section>
+                    <nav>
+                        <button onclick="imageBack()">Back</button>
+                        <p id="imageNumber"></p>                 
+                        <button onclick="imageBefore()">Next</button>
+                    </nav>
+                </div>               
             </dialog>
-
-            
-        </section>
-        
-        
+        </section>  
     </main>
     <footer>
         <section>
             <h3>Erstellt von Alex Epp</h3>
         </section>
-        
-
-    </footer>
-
-    
+    </footer> 
 </body>
 <script src="./script.js"></script>
 </html>
