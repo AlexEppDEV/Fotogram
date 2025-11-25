@@ -16,7 +16,7 @@ body {
 }
 header {
     width: 100%;
-    height: 200px;
+    height: 15vh;
     background-color: rgb(47, 24, 30);
     display: flex;
     justify-content: center;
@@ -75,7 +75,7 @@ h3 {
 
 main {
     width: 100%;
-    height: 80vh;   
+    height: 70vh;   
     background-color: rgb(78, 56, 62);
     display: flex;
     justify-content: center;
@@ -124,7 +124,7 @@ main img {
 
 footer {
     width: 100%;
-    height: 200px;
+    height: 15vh;
     background-color: rgb(65, 45, 45); 
     display: flex;
     justify-content: center;
@@ -146,7 +146,14 @@ footer section {
 
                                             /* DIALOG  */
 
+.heroDialog {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
+}
 
 dialog header {
     background-color: rgb(111, 71, 49);
@@ -155,29 +162,20 @@ dialog header {
     align-items: center;
     height: auto;
     margin: 0;
-    max-height: 15%;
+    max-height: 15vh;
 }
 
-dialog section {
+.dialogImages {
     background-color: rgb(111, 71, 49);
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70%;
+    max-height: 100%;
+    max-width: 100%;
+    height: 70vh;
     width: 100%;
 }
-
-dialog nav {
-    padding: 16px 16px;
-    background-color: rgb(111, 71, 49);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    max-height: 15%;
-}
-
-
 dialog img {
     max-height: 100%;
     max-width: 100%;
@@ -187,10 +185,23 @@ dialog img {
     object-fit: contain;
 }
 
+
+dialog nav {
+    padding: 16px 16px;
+    background-color: rgb(111, 71, 49);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-height: 15vh;
+}
+
+
+
+
 /* Standardzustand des Dialogs */
 dialog {
     width: 50vw;
-    height: 75vh;
+    max-height: 75vh;
     background-color: rgb(111, 71, 49);
     box-sizing: border-box;
 }
@@ -230,11 +241,12 @@ button:hover {
     cursor: pointer;
 }
 
+
+/* media 768 bis 1280 */
 @media (min-width: 768px) and (max-width: 1280px) {
     header {
     width: 100%;
-    height: 150px;
-    
+    height: 15vh;  
 }
 
 header section {
@@ -258,8 +270,9 @@ h1 {
 }
 
 h2 {
-    font-size: 34px;
+    font-size: 32px;
     padding: 32px 0;
+    text-align: center;
 }
 
 h3 {
@@ -269,7 +282,7 @@ h3 {
 
 main {
     width: 100%;
-    height: 80vh;   
+    height: 70vh;   
 }
 
 main p {
@@ -293,7 +306,6 @@ main img {
 .imageGallery {
     width: 100%;  
     padding: 0 60px;
-
 }
 
 .images img:hover {
@@ -302,7 +314,7 @@ main img {
 
 footer {
     width: 100%;
-    height: 150px;
+    height: 15vh;
 }
 
 footer section {
@@ -332,20 +344,18 @@ dialog img {
     width: auto;
     height: auto;
     border-radius: 8px;
- 
 }
 
 /* Standardzustand des Dialogs */
 dialog {
     width: 50vw;
-    height: 75vh;
+    /* max-height: 75vh; */
 }
 
 /* Zustand, wenn der Dialog geöffnet ist */
 dialog.opened {
     border: 5px solid rgba(13, 87, 31, 0.278);             
-    border-radius: 5%;
-      
+    border-radius: 5%;    
 }
 
 
@@ -355,18 +365,139 @@ button {
     font-size: 16px;
     border-radius: 5px;
     padding: 8px 8px;
-
 }
 
 button:hover {  
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
- 
 }
 
 
 }
 
 @media (min-width: 300px) and (max-width: 768px) {
+    header {
+    width: 100%;
+    height: 15vh;  
+}
+
+header section {
+    width: 100%;
+    padding: 0 20px;
+}
+
+header p {
+    padding-left: 18px;
+    font-size: 24px;
+}
+
+header img {
+    height: 64px;
+    width: 64px;
+}
+
+h1 {
+    font-size: 32px;
+    padding: 12px 0;
+}
+
+h2 {
+    font-size: 24px;
+    padding: 16px 0;
+    text-align: center;
+}
+
+h3 {
+    font-size: 18px;
+    padding: 16px 0;
+}
+
+main {
+    width: 100%;
+    height: 70vh;   
+}
+
+main p {
+    font-size: 16px;
+}
+
+
+main img {
+    height: 64px;
+    width: 64px;
+    border-radius: 4px;
+}
+
+.images {  
+    width: 100%;
+    height: auto;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.imageGallery {
+    width: 100%;  
+    padding: 0 20px;
+}
+
+.images img:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    width: 100%;
+    height: 15vh;
+}
+
+footer section {
+    width: 100%;
+    padding: 0 20px;
+}
+
+dialog header {
+    margin: 0;
+    max-height: 15%;
+}
+
+dialog section {
+    height: 70%;
+    width: 100%;
+}
+
+dialog nav {
+    padding: 16px 16px;
+    max-height: 15%;
+}
+
+
+dialog img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Standardzustand des Dialogs */
+dialog {
+    width: 90vw;
+    max-height: 90vh;
+}
+
+/* Zustand, wenn der Dialog geöffnet ist */
+dialog.opened {
+    border: 5px solid rgba(13, 87, 31, 0.278);             
+    border-radius: 5%;    
+}
+
+
+button {
+    height: 32px ;
+    width: auto;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 8px 8px;
+}
+
 
 }
 
