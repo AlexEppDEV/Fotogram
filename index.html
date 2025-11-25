@@ -24,23 +24,24 @@
                     
             <dialog id="imgDialog">
                 <div class="heroDialog">
-                    <header>
-                    <h2 id="dialogTittel">
-                        Fotogram
-                    </h2>
-                    <button onclick="dialogClose()" aria-label="Dialog Schließen">X</button>
+                    <header class="dialogHeader">
+                        <h2 id="dialogTittel">
+                            Fotogram
+                        </h2>
+                        <button onclick="dialogClose()" class="closeButton" aaria-label="Dialog Schließen">X</button>
                     </header>
 
                     <section class="dialogImages">
-                        <img src="" id="dialogImportImage" alt="Logo Fotogram">  
+                        <img src="" id="dialogImportImage" class="dialogImg" alt="Logo Fotogram">  
                     </section>
                     <nav class="buttonBar">
-                        <button onclick="imageBack()">Back</button>
+                        <button onclick="imageBack()"> < </button>
                         <p id="imageNumber"></p>                 
-                        <button onclick="imageBefore()">Next</button>
+                        <button onclick="imageBefore()"> > </button>
                     </nav>
                 </div>               
             </dialog>
+            
         </section>  
     </main>
     <footer>

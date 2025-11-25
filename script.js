@@ -22,7 +22,7 @@ function init() {
     let NewImages = document.getElementById('import-image');
     NewImages.innerHTML = ' ';
     for (let index = 0; index < images.length; index++) {
-       NewImages.innerHTML += `<img src="./img/${images[index]}" onclick="dialogOpen(); dialogImgImport(this);" alt="Images">`;
+       NewImages.innerHTML += `<img src="./img/${images[index]}" onclick="dialogOpen(); dialogImgImport(this);" class="mainImg" alt="Images">`;
     }
 }
 
