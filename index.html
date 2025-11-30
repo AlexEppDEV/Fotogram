@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,16 +28,16 @@
                         <h2 id="dialogTittel">
                             Fotogram
                         </h2>
-                        <button onclick="dialogClose()" class="closeButton" aaria-label="Dialog Schließen">X</button>
+                        <button onclick="dialogClose()" class="closeButton" aria-label="Dialog Close">X</button>
                     </header>
 
                     <section class="dialogImages">
-                        <img src="" id="dialogImportImage" class="dialogImg" alt="Logo Fotogram">  
+                        <img src="" id="dialogImportImage" class="dialogImg" alt="">  
                     </section>
                     <nav class="buttonBar">
-                        <button onclick="imageBack()"> < </button>
-                        <p id="imageNumber"></p>                 
-                        <button onclick="imageBefore()"> > </button>
+                        <button onclick="imageBack()" aria-label="Image back button"> < </button>
+                        <p id="imageNumber" aria-label="Image Number" ></p>                 
+                        <button onclick="imageBefore()" aria-label="Image Before button"> > </button>
                     </nav>
                 </div>               
             </dialog>
