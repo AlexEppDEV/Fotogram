@@ -22,7 +22,7 @@ function init() {
     let NewImages = document.getElementById('import-image');
     NewImages.innerHTML = ' ';
     for (let index = 0; index < images.length; index++) {
-       NewImages.innerHTML += `<img src="./img/${images[index]}" onclick="dialogOpen(); dialogImgImport(this);" class="mainImg" alt="Images">`;
+       NewImages.innerHTML += `<img src="./img/${images[index]}" onclick="dialogOpen(); dialogImgImport(this);" tabindex="0" class="mainImg" alt="Images">`;
     }
 }
 
@@ -32,7 +32,7 @@ function dialogImgImport(clickedImage) {
 
     // Holt den kompletten src-Wert des angeklickten Bildes (z. B. "./img/pic01.jpg")
     let srcValue = clickedImage.getAttribute("src");
-    console.log(srcValue); // Nur zur Kontrolle in der Konsole
+    // console.log(srcValue); 
 
     // Extrahiert den Dateinamen aus dem Pfad, indem am "/" getrennt und nur das letzte Element genutzt wird
     let imageName = srcValue.split('/').pop();
@@ -75,7 +75,7 @@ function imageBack () {
         indexNumber = indexNumber - 1; 
         // Sucht im globalen Array "images" an welcher Position sich dieses Bild befindet
         let nextImage = images[indexNumber];
-        console.log(nextImage)
+        // console.log(nextImage)
 
         let nextDialogImg = document.getElementById("dialogImportImage");
         nextDialogImg.src = imageFile + nextImage;
@@ -117,3 +117,32 @@ dialog.addEventListener("click", function(event) {
     console.log("Backdrop wurde geklickt → Dialog schließen");
     dialog.close();
 });
+
+
+//  Function für Dialog - tasten abfrage
+document.addEventListener("keydown", dialogHandleKeys)
+
+function dialogHandleKeys (event) {
+
+    if (dialogOpen === false)  {
+        return;
+    }
+        if (event.key === "Escape") {
+            dialogClose()
+        }
+        if (event.key === "ArrowRight") {
+            imageBefore ()
+            
+        }
+
+        if (event.key === "ArrowLeft") {
+            imageBack ()
+        }
+}
+
+
+
+
+
+
+
