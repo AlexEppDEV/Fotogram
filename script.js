@@ -29,76 +29,49 @@ function init() {
 
 // function - value lesen bei anclicken und übertragen in dialog zu scr 
 function dialogImgImport(clickedImage) {
-
-    // Holt den kompletten src-Wert des angeklickten Bildes (z. B. "./img/pic01.jpg")
     let srcValue = clickedImage.getAttribute("src");
-    // console.log(srcValue); 
-
-    // Extrahiert den Dateinamen aus dem Pfad, indem am "/" getrennt und nur das letzte Element genutzt wird
     let imageName = srcValue.split('/').pop();
-
-    // Sucht im globalen Array "images" an welcher Position sich dieses Bild befindet
     indexNumber = images.indexOf(imageName);
-
-    // Aktualisiert die Bildnummer im Dialog, z. B. "3 / 10"
     document.getElementById("imageNumber").innerText = `${indexNumber + 1} / ${images.length} `;
-
-    // Findet das Bild im Dialogfenster und setzt dessen "src" auf das angeklickte Bild
     let dialogImg = document.getElementById("dialogImportImage");
     dialogImg.src = srcValue;
 }
-
+// Function zum vor blättern
 function imageBefore () {
     if ( indexNumber >= images.length - 1) {
         indexNumber = -1;
         }
-    
     indexNumber = indexNumber + 1;
-    // Sucht im globalen Array "images" an welcher Position sich dieses Bild befindet
     let nextImage = images[indexNumber];
-    // console.log(nextImage)
-
     let nextDialogImg = document.getElementById("dialogImportImage");
     nextDialogImg.src = imageFile + nextImage;
-
-    // // Aktualisiert die Bildnummer im Dialog, z. B. "3 / 10"
     document.getElementById("imageNumber").innerText = `${indexNumber + 1} / ${images.length} `; 
 }
 
-
+// Function zum zurück blättern
 function imageBack () {
 
     if ( indexNumber <= 0) {
         indexNumber = images.length;
         }
-
         indexNumber = indexNumber - 1; 
-        // Sucht im globalen Array "images" an welcher Position sich dieses Bild befindet
         let nextImage = images[indexNumber];
-        // console.log(nextImage)
-
         let nextDialogImg = document.getElementById("dialogImportImage");
         nextDialogImg.src = imageFile + nextImage;
-
-        // // Aktualisiert die Bildnummer im Dialog, z. B. "3 / 10"
         document.getElementById("imageNumber").innerText = `${indexNumber + 1} / ${images.length} `;   
 }
-
-
-    // Zugriff auf das Dialogelement mit seiner ID
-    
+ 
     let dialogRef = document.getElementById('imgDialog');
     // Funktion zum Öffnen des Dialogs
     function dialogOpen() {
-        
-        dialogRef.showModal();           // Öffnet das Dialogfenster modal (blockiert Hintergrund)
-        dialogRef.classList.add('opened'); // Fügt die CSS-Klasse hinzu → löst Animation & Backdrop aus
+        dialogRef.showModal();        
+        dialogRef.classList.add('opened');
     }
 
     // Funktion zum Schließen des Dialogs
     function dialogClose() {
-        dialogRef.close();                // Schließt den Dialog
-        dialogRef.classList.remove('opened'); // Entfernt die CSS-Klasse → Animation zurücksetzen
+        dialogRef.close();                
+        dialogRef.classList.remove('opened'); 
     }
 
 
@@ -106,15 +79,13 @@ function imageBack () {
 let dialog = document.getElementById("imgDialog");
 let hero = dialog.querySelector(".heroDialog");
 
-// 1. Klick AUF den Inhalt
+// verhindert, dass der Klick zum <dialog> hochwandert
 hero.addEventListener("click", function(event) {
-    // verhindert, dass der Klick zum <dialog> hochwandert
     event.stopPropagation();
 });
 
-// 2. Klick AUF das Backdrop (also den Dialog selbst)
+// Klick AUF das Backdrop (also den Dialog selbst)
 dialog.addEventListener("click", function(event) {
-    console.log("Backdrop wurde geklickt → Dialog schließen");
     dialog.close();
 });
 
@@ -139,10 +110,4 @@ function dialogHandleKeys (event) {
             imageBack ()
         }
 }
-
-
-
-
-
-
 

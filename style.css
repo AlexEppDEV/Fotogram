@@ -342,7 +342,6 @@ header p {
 
 header img {
     max-height: 96px;
-    /* width: 96px; */
 }
 
 
@@ -369,7 +368,6 @@ main {
 
 
 .imageGallery {
-    /* width: 100%;   */
     padding: 20px 60px;
 }
 
@@ -491,7 +489,6 @@ header p {
 
 header img {
     max-height: 64px;
-    /* width: 64px; */
 }
 
 
