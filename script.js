@@ -13,9 +13,13 @@ const images = [
 "star-trek-8658148_1280.jpg"
 ];
 
+
 let indexNumber = null;
 let nextIndex = null;
 let imageFile = './img/';
+let dialogRef = document.getElementById('imgDialog');
+let dialog = document.getElementById("imgDialog");
+let hero = dialog.querySelector(".heroDialog");
 
 
 function init() {
@@ -24,10 +28,10 @@ function init() {
     for (let index = 0; index < images.length; index++) {
        NewImages.innerHTML += `<img src="./img/${images[index]}" onclick="dialogOpen(); dialogImgImport(this);" tabindex="0" class="mainImg" alt="Images">`;
     }
+    setEventListener ()
 }
 
 
-// function - value lesen bei anclicken und übertragen in dialog zu scr 
 function dialogImgImport(clickedImage) {
     let srcValue = clickedImage.getAttribute("src");
     let imageName = srcValue.split('/').pop();
@@ -36,78 +40,69 @@ function dialogImgImport(clickedImage) {
     let dialogImg = document.getElementById("dialogImportImage");
     dialogImg.src = srcValue;
 }
-// Function zum vor blättern
+
+
+function numberEdit (nextImage) {
+    let nextDialogImg = document.getElementById("dialogImportImage");
+    nextDialogImg.src = imageFile + nextImage;
+    document.getElementById("imageNumber").innerText = `${indexNumber + 1} / ${images.length} `; 
+}
+
+
 function imageBefore () {
     if ( indexNumber >= images.length - 1) {
         indexNumber = -1;
         }
     indexNumber = indexNumber + 1;
     let nextImage = images[indexNumber];
-    let nextDialogImg = document.getElementById("dialogImportImage");
-    nextDialogImg.src = imageFile + nextImage;
-    document.getElementById("imageNumber").innerText = `${indexNumber + 1} / ${images.length} `; 
+    numberEdit (nextImage);
 }
 
-// Function zum zurück blättern
-function imageBack () {
 
+function imageBack () {
     if ( indexNumber <= 0) {
         indexNumber = images.length;
         }
-        indexNumber = indexNumber - 1; 
-        let nextImage = images[indexNumber];
-        let nextDialogImg = document.getElementById("dialogImportImage");
-        nextDialogImg.src = imageFile + nextImage;
-        document.getElementById("imageNumber").innerText = `${indexNumber + 1} / ${images.length} `;   
+    indexNumber = indexNumber - 1; 
+    let nextImage = images[indexNumber];
+    numberEdit (nextImage);
 }
- 
-    let dialogRef = document.getElementById('imgDialog');
-    // Funktion zum Öffnen des Dialogs
-    function dialogOpen() {
-        dialogRef.showModal();        
-        dialogRef.classList.add('opened');
-    }
 
-    // Funktion zum Schließen des Dialogs
-    function dialogClose() {
-        dialogRef.close();                
-        dialogRef.classList.remove('opened'); 
-    }
+    
+function dialogOpen() {
+    dialogRef.showModal();        
+    dialogRef.classList.add('opened');
+}
 
 
-
-let dialog = document.getElementById("imgDialog");
-let hero = dialog.querySelector(".heroDialog");
-
-// verhindert, dass der Klick zum <dialog> hochwandert
-hero.addEventListener("click", function(event) {
-    event.stopPropagation();
-});
-
-// Klick AUF das Backdrop (also den Dialog selbst)
-dialog.addEventListener("click", function(event) {
-    dialog.close();
-});
+function dialogClose() {
+    dialogRef.close();                
+    dialogRef.classList.remove('opened'); 
+}
 
 
-//  Function für Dialog - tasten abfrage
-document.addEventListener("keydown", dialogHandleKeys)
+function setEventListener () {
+    hero.addEventListener("click", function(event) {
+        event.stopPropagation();
+    });
+    dialog.addEventListener("click", function(event) {
+        dialog.close();
+    });
+    document.addEventListener("keydown", dialogHandleKeys)
+}
+
 
 function dialogHandleKeys (event) {
-
     if (dialogOpen === false)  {
         return;
     }
-        if (event.key === "Escape") {
-            dialogClose()
-        }
-        if (event.key === "ArrowRight") {
-            imageBefore ()
-            
-        }
-
-        if (event.key === "ArrowLeft") {
-            imageBack ()
-        }
+    if (event.key === "Escape") {
+        dialogClose()
+    }
+    if (event.key === "ArrowRight") {
+        imageBefore () 
+    }
+    if (event.key === "ArrowLeft") {
+        imageBack ()
+    }
 }
-
